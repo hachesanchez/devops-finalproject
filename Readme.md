@@ -49,12 +49,4 @@ This repository contains the final project for the DevOps Bootcamp, completed by
 - Monitor infrastructure metrics using Grafana.
 - Enable monitoring logs of AKS on managed Prometheus and Grafana.
 
-## Scrum Team Agreement
-- **Working Hours:** [Specify your team's working hours]
-- **Definition of Done:** [Specify your team's definition of done]
-- **Team's Way of Work:** [Specify how your team collaborates]
-- **Scrum Events:** [Specify when your team will have daily scrum, sprint review, and other scrum events]
-
-## Notes
-- Add any additional notes or specific instructions for collaborators or reviewers.
-
+ 
