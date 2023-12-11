@@ -1,5 +1,6 @@
-#edited docker-compose.yml
+# Docker Compose Configuration
 
+```yaml
 version: '3'
 services:
   frontend:
