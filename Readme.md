@@ -50,26 +50,32 @@ This repository contains the final project for the DevOps Bootcamp, completed by
 - Enable monitoring logs of AKS on managed Prometheus and Grafana.
 
  
-## Git commands
- # Make sure you are on the "helena" branch
-git checkout BRANCH
+## 🐙 Git commands 
 
-# Add changes to the staging area
-git add .
+<!-- ```
+git status
+git add
+git commit
+``` -->
+- Make sure you are on "YOUR_BRANCH" branch
+`git checkout YOUR_BRANCH`
 
-# Commit the changes
-git commit -m "Your commit message here"
+- Add changes to the staging area
+`git add .`
 
-# Switch to the main branch
-git checkout main
+- Commit the changes
+`git commit -m "Your commit message here"`
 
-# Pull changes from the remote main branch
-git pull origin main
+- Switch to the main branch
+`git checkout main`
 
-# Merge changes from helena into main (this may cause conflicts)
-git merge BRANCH
+- Pull changes from the remote main branch
+`git pull origin main`
 
-# If there are conflicts, resolve them and commit the changes
+- Merge changes from helena into main (this may cause conflicts)
+`git merge YOUR_BRANCH`
 
-# Push changes to the remote main branch
-git push origin main
+- If there are conflicts, resolve them and commit the changes
+
+- Push changes to the remote main branch
+`git push origin main`
