@@ -34,12 +34,12 @@ This repository contains the final project for the DevOps Bootcamp, completed by
 - Create web apps under one app service plan using Terraform.
 - Utilize Azure DevOps pipelines for deployment.
 
-### Part 5 - Create an AKS Cluster using Terraform (Helena)
+### Part 5 - Create an AKS Cluster using Terraform 
 - Set up Terraform workspace and module for AKS deployment.
 - Manage state in Azure Blob Storage.
 - Follow best practices for Terraform code.
 
-### Part 6 - Deploy Whole Application on AKS (Helena)
+### Part 6 - Deploy Whole Application on AKS  
 - Create deployment YAML files for frontend, backend, and database.
 - Deploy pods and services on AKS.
 - Optionally, add a domain for the application.
