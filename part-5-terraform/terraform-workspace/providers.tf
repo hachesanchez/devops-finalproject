@@ -1,0 +1,3 @@
+provider "azurem" {
+  features = {}
+}
