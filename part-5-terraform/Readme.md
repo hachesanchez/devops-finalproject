@@ -6,8 +6,11 @@ This guide outlines the steps to set up an Azure Kubernetes Service (AKS) cluste
 
 ### 1. Create a Terraform Workspace and AKS Module
 
-1. Configure provider settings in `providers.tf`.
-2.  `$ terraform init`
+- Configure provider settings in `providers.tf`
+- `$ terraform init`
+- Configure infrastructure
+- `$ terraform plan`
+- `$ terraform apply`
 
 
 ### 2. Manage State in Remote Azure Blob

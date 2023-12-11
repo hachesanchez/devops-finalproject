@@ -5,4 +5,4 @@ storage_account_tier     = "Standard"
 storage_replication_type = "LRS"
 tfstate_container_name   = "tfstate"
 tfstate_access_type      = "blob"
- 
+
