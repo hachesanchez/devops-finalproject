@@ -20,3 +20,9 @@ docker run --name front -d -p 8080:8080 basic3-tier-front
 
 docker pull kaputinho/part-2-docker-front
 docker run --name front -d -p 8080:8080 kaputinho/part-2-docker-front
+
+
+/////////////////////
+PARA EL .NET
+docker build -t basic3-tier-back .
+docker run -d --name back  -p 8000:80 basic3-tier-back
