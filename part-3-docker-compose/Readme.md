@@ -5,7 +5,7 @@ version: '3'
 services:
   frontend:
     build:
-      context: ../Basic3Tier.UI/Dockerfile
+      context: ./Basic3Tier.UI/Dockerfile
       dockerfile: Dockerfile
     container_name: front
     ports:
@@ -17,7 +17,7 @@ services:
 
   backend:
     build:
-      context: ../Basic3Tier.API/Dockerfile
+      context: ./Basic3Tier.API/Dockerfile
       dockerfile: Dockerfile
     container_name: back
     ports:
