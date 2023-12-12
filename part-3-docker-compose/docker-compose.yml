@@ -1,0 +1,38 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./Basic3Tier.UI/Dockerfile
+      dockerfile: Dockerfile
+    container_name: front
+    ports:
+      - "80:8080"
+    networks:
+      - full-app
+
+  backend:
+    build:
+      context: ./Basic3Tier.API/Dockerfile
+      dockerfile: Dockerfile
+    container_name: back
+    environment:
+      - "ConnectionStrings__Basic3Tier=Host=postgres;Port=5432;Database=basic3tier;Username=postgres;Password=admin123"
+    ports:
+      - "8000:80"
+    networks:
+      - full-app
+
+  postgres:
+    image: postgres:latest
+    restart: always
+    container_name: postgres
+    environment:
+      - "POSTGRES_USER: postgres"
+      - "POSTGRES_PASSWORD: admin123"
+      - "POSTGRES_DB: basic3tier"
+    volumes:
+      - frijoles-volume:/var/lib/postgresql/data
+    networks:
+      - full-app
+    ports:
+      - "5432:5432"

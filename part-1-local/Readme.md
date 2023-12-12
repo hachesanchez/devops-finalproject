@@ -16,3 +16,14 @@ cd path/to/backend
 # Run the dotnet build and run commands
 dotnet build
 dotnet run
+<<<<<<< HEAD
+=======
+
+
+
+Deploy Front with Nginx:
+ - brew install nginx
+ - sudo nano /opt/homebrew/etc/nginx/nginx.conf ---> edit the root folder and set the root where index.html is
+ - brew services start nginx
+ - should be working on localhost:8080
+>>>>>>> ffde40d (test)

@@ -153,14 +153,14 @@ $(document).ready(function () {
         deleteUser(userId);
     });
 
-    
-    
+
+
     async function getText(file) {
         let myObject = await fetch(file);
         let myText = await myObject.text();
         const config = JSON.parse(myText);
-        baseUrl = config.API_URL;
-        // Initial load of users
+        baseUrl = process.env.API_URL ? process.env.API_URL : config.API_URL;
+
         getUsers();
     }
     getText('./configs/config.json');
