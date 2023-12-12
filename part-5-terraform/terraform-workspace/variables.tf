@@ -32,4 +32,18 @@ variable "tfstate_access_type" {
   description = "Determines the public access level for the Azure Storage container"
   type        = string
 }
- 
+
+variable "aks_cluster_name" {
+  description = "The na,e of the AKS clusteer module"
+  type        = string
+}
+
+variable "node_count" {
+  description = "The number of nodes in the AKS cluster"
+  type        = number
+}
+
+variable "kubernetes_version" {
+  description = "The Kubernetes version for the AKS cluster"
+  type        = string
+}
