@@ -1,6 +1,6 @@
-resource_group_name      = "rg-frijoles-test-terraform"
+resource_group_name      = "rg-the-frijoles"
 location                 = "francecentral"
-storage_account_name     = "staccthefrijolestest"
+storage_account_name     = "staccthefrijoles"
 storage_account_tier     = "Standard"
 storage_replication_type = "LRS"
 tfstate_container_name   = "tfstate"
