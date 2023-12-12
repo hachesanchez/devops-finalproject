@@ -1,8 +1,8 @@
 terraform {
   backend "azurerm" {
-    resource_group_name  = "rg-frijoles-test-terraform"
-    storage_account_name = "staccthefrijolestest"
-    container_name       = "tfstate"
-    key                  = "terraform-tfstate"
+    resource_group_name  = var.resource_group_name
+    storage_account_name = var.storage_account_name
+    container_name       = var.container_name
+    key                  = var.key
   }
 }
