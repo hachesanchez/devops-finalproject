@@ -52,11 +52,6 @@ This repository contains the final project for the DevOps Bootcamp, completed by
  
 ## 🐙 Git commands 
 
-<!-- ```
-git status
-git add
-git commit
-``` -->
 - Make sure you are on "YOUR_BRANCH" branch
 `git checkout YOUR_BRANCH`
 
@@ -72,10 +67,18 @@ git commit
 - Pull changes from the remote main branch
 `git pull origin main`
 
-- Merge changes from helena into main (this may cause conflicts)
+- Merge changes from YOUR_BRANCH into main (this may cause conflicts)
 `git merge YOUR_BRANCH`
 
 - If there are conflicts, resolve them and commit the changes
 
 - Push changes to the remote main branch
 `git push origin main`
+
+- Switch to your branch
+`git checkout YOUR_BRANCH`
+
+- Merge changes from main into YOUR_BRANCH
+`git merge main`
+
+

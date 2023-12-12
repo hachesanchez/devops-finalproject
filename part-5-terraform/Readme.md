@@ -25,24 +25,23 @@ This guide outlines the steps to set up an Azure Kubernetes Service (AKS) cluste
     └── variables.tf
 ```
 
+### 2. Commands
+```
+$ terraform init
+$ terraform plan
+$ terramorf apply
 
-### 2. Manage State in Remote Azure Blob
+```
 
-1. Navigate to the `terraform-workspace` directory.
-2. Create configurations in files based on networking and infrastructure needs.
+### 3. Manage State in Remote Azure Blob
 
-### 3. Follow Best Practices for Structured and Modular Code
-
-1. Adhere to Terraform best practices for creating structured and modular code.
-2. Ensure proper variable usage, module organization, and maintainability.
+- Navigate to the `terraform-workspace` directory.
+- Create configurations in files based on networking and infrastructure needs.
 
 ### 4. [Bonus] Publish the Terraform Module to Terraform Cloud
 
-1. Consider publishing your Terraform module to Terraform Cloud.
-2. Create a free account on Terraform Cloud and follow the platform's documentation  
+- Consider publishing your Terraform module to Terraform Cloud.
+- Create a free account on Terraform Cloud and follow the platform's documentation  
 
-
-<!-- 
-blabla
- -->
+ 
  
