@@ -1,7 +1,7 @@
 /////////////////////
 docker pull kaputinho/basic3tier-front:front
 docker run --name front  -d -p 80:8080 kaputinho/basic3tier-front:front
-docker exec -it <CONTAINER ID> sed -i 's/"API_URL": "http:\/\/localhost:8000\/"/"API_URL": "http:\/\/<VM-IP>:8000\/"/' /usr/share/nginx/html/configs/config.json
+
 
 /////////////////////
 PARA EL .NET
