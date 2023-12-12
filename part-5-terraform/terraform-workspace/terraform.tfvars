@@ -5,4 +5,6 @@ storage_account_tier     = "Standard"
 storage_replication_type = "LRS"
 tfstate_container_name   = "tfstate"
 tfstate_access_type      = "blob"
-
+aks_cluster_name         = "aks"
+node_count               = 3
+# kubernetes_version       = "1.21.0"
