@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: backend
+  name: backend-deployment
+  namespace: backend 
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend    
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec: 
+      containers:
+        - image: kaputinho/basic3tier-back:back
+          name: backend
+          ports:
+            - containerPort: 80
+              name: backend
