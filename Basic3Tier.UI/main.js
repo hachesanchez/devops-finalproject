@@ -159,7 +159,7 @@ $(document).ready(function () {
         let myObject = await fetch(file);
         let myText = await myObject.text();
         const config = JSON.parse(myText);
-        baseUrl = process.env.API_URL || config.API_URL;
+        baseUrl = process.env.API_BACK_URL || config.API_URL;
         getUsers();
     }
     getText('./configs/config.json');
