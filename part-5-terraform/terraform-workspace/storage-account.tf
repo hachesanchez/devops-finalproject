@@ -5,5 +5,7 @@ resource "azurerm_storage_account" "storage-account" {
   account_tier             = var.storage_account_tier
   account_replication_type = var.storage_replication_type
 
-  depends_on = [azurerm_resource_group.rg]
+  tags = {
+    environment = azurerm_resource_group.rg.tags["environment"]
+  }
 }

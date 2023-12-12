@@ -1,5 +1,16 @@
 provider "azurerm" {
   features {}
+  subscription_id = "b892ab8c-2c38-478a-8b8b-887ddc61d17d"
+
+}
+
+resource "azurerm_resource_group" "rg" {
+  name     = var.resource_group_name
+  location = var.location
+
+  tags = {
+    environment = var.environment_tag
+  }
 }
 
 module "aks" {
@@ -10,11 +21,6 @@ module "aks" {
   node_count          = var.node_count
   kubernetes_version  = var.kubernetes_version
   dns_prefix          = var.dns_prefix
-}
-
-resource "azurerm_resource_group" "rg" {
-  name     = var.resource_group_name
-  location = var.location
 }
 
 output "aks_cluster_id" {

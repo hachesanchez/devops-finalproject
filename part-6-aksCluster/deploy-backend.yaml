@@ -4,17 +4,17 @@ metadata:
   labels:
     app: backend
   name: backend-deployment
-  namespace: backend 
+  namespace: backend
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: backend    
+      app: backend
   template:
     metadata:
       labels:
         app: backend
-    spec: 
+    spec:
       containers:
         - image: kaputinho/basic3tier-back:back
           name: backend

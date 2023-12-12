@@ -58,3 +58,7 @@ variable "dns_prefix" {
   type        = string
 }
 
+variable "environment_tag" {
+  description = "Environment tag"
+  type        = string
+}
