@@ -1,6 +1,6 @@
 // Wait for the document to be ready
 $(document).ready(function () {
-    let baseUrl = process.env.API_BACK_URL;
+    let baseUrl = "";
     let users = [];
     let activeUser = {};
     // Function to get users from 'api/user' endpoint and display them in the table
