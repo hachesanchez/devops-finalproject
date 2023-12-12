@@ -33,6 +33,11 @@ variable "tfstate_access_type" {
   type        = string
 }
 
+variable "tfstate_key" {
+  description = "Backend's tfstate key"
+  type        = string
+}
+
 variable "aks_cluster_name" {
   description = "The na,e of the AKS clusteer module"
   type        = string
@@ -47,3 +52,9 @@ variable "kubernetes_version" {
   description = "The Kubernetes version for the AKS cluster"
   type        = string
 }
+
+variable "dns_prefix" {
+  description = "Component for creating a unique and accessible FQDN for your AKS cluster,"
+  type        = string
+}
+

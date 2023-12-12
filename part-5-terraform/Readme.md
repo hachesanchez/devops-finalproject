@@ -6,11 +6,24 @@ This guide outlines the steps to set up an Azure Kubernetes Service (AKS) cluste
 
 ### 1. Create a Terraform Workspace and AKS Module
 
-- Configure provider settings in `providers.tf`
-- `$ terraform init`
-- Configure infrastructure
-- `$ terraform plan`
-- `$ terraform apply`
+- Configure files:
+
+```
+└── terraform-workspace
+    ├── backend.tf
+    ├── main.tf
+    ├── modules
+    │   └── aks
+    │       ├── main.tf
+    │       ├── outputs.tf
+    │       └── variables.tf
+    ├── storage-account.tf
+    ├── storage-container.tf
+    ├── terraform.tfstate
+    ├── terraform.tfstate.backup
+    ├── terraform.tfvars
+    └── variables.tf
+```
 
 
 ### 2. Manage State in Remote Azure Blob
@@ -32,5 +45,4 @@ This guide outlines the steps to set up an Azure Kubernetes Service (AKS) cluste
 <!-- 
 blabla
  -->
-- `$ cd terraform-workspace`
-- `$ terraform init`
+ 

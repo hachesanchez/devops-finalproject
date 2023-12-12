@@ -1,14 +1,17 @@
-# Datasource to get latest Azure AKS Version
-data "azurem_kubernetes_service_versions" "current" {
+provider "azurerm" {
+  features {}
+}
+
+data "azurerm_kubernetes_service_versions" "current" {
   location        = var.location
   include_preview = false
 }
 
-resource "azurem_kubernetes_cluster" "aks" {
+resource "azurerm_kubernetes_cluster" "aks" {
   name                = var.aks_cluster_name
   resource_group_name = var.resource_group_name
   location            = var.location
-  kubernetes_version  = data.azurem_kubernetes_service_versions
+  kubernetes_version  = data.azurerm_kubernetes_service_versions.current.latest_version
 
   default_node_pool {
     name                = "defaultpool"
@@ -22,14 +25,14 @@ resource "azurem_kubernetes_cluster" "aks" {
     type                = "VirtualMachineScaleSets"
   }
 
-  dns_prefix = "aks-${random_string.random_suffix.result}"
+  dns_prefix = var.dns_prefix
+
+  identity {
+    type = "SystemAssigned"
+  }
 
   tags = {
     environment = "production"
   }
-}
-
-output "aks_cluster_id" {
-  value = azurerm_kubernetes_cluster.aks.id
 }
 

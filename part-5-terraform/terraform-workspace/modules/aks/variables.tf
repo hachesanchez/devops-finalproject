@@ -18,7 +18,12 @@ variable "node_count" {
   type        = number
 }
 
-# variable "kubernetes_version" {
-#   description = "The Kubernetes version for the AKS cluster"
-#   type        = string
-# }
+variable "kubernetes_version" {
+  description = "The Kubernetes version for the AKS cluster"
+  type        = string
+}
+
+variable "dns_prefix" {
+  description = "Component for creating a unique and accessible FQDN for your AKS cluster,"
+  type        = string
+}
