@@ -1,5 +1,5 @@
 resource_group_name   = "rg-the-frijoles2"
 app_service_plan_name = "the-frijoles-app-service-plan"
-web_app_name_1        = "the-frijoles-web-app-1"
-web_app_name_2        = "the-frijoles-web-app-2"
+web_app_name_1        = "the-frijoles-front"
+web_app_name_2        = "the-frijoles-back"
 location              = "eastus"
