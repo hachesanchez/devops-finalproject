@@ -19,5 +19,5 @@ spec:
         - image: kaputinho/basic3tier-back:back
           name: backend
           ports:
-            - containerPort: 80
+            - containerPort: 8080
               name: backend
