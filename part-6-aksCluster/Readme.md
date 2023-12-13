@@ -2,11 +2,26 @@
 
 ## Steps
 
-- 1. Create three deployment YAML files, one each for frontend, backend, and database. 
-- 2. Deploy one pod of frontend, three pods of backend and one pod of the database. 
-- 3. Create a NodePort Service to expose “frontend application” 
-- 4. Create a NodePort Service to expose “backend application” 
-- 5. Create a ClusterIP Service to connect frontend and backend applications 
-- 6. Create a ClusterIP Service to connect the backend with the database. 
-- 7. Create a load balancer to expose the frontend application. 
-- 8. [Bonus, Optional] - Add a domain (ex. ui.myapp.com and api.myapp.com) to your application 
+- Create three deployment YAML files, one each for frontend, backend, and database. 
+- Deploy one pod of frontend, three pods of backend and one pod of the database. 
+- Create a NodePort Service to expose “frontend application” 
+- Create a NodePort Service to expose “backend application” 
+- Create a ClusterIP Service to connect frontend and backend applications 
+- Create a ClusterIP Service to connect the backend with the database. 
+- Create a load balancer to expose the frontend application. 
+- [Bonus, Optional] - Add a domain (ex. ui.myapp.com and api.myapp.com) to your application 
+
+
+### Useful commands to check the cluster
+```
+
+$ kubectl get namespaces
+$ kubectl get pods --all-namespaces
+$ kubectl get nodes --all-namespaces
+$ kubectl get nodes -o wide
+$ kubectl get services --all-namespaces
+$ kubectl describe service db-service -n postgres
+$ kubectl describe service backend-service -n backend
+$ kubectl describe service frontend-service -n frontend
+
+```

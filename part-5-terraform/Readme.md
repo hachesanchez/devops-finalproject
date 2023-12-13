@@ -37,6 +37,7 @@ $ terramorf apply
 
 - Navigate to the `terraform-workspace` directory.
 - Create configurations in files based on networking and infrastructure needs.
+- Repeat: `$ terraform init` as there has been a change on state
 
 ### 4. [Bonus] Publish the Terraform Module to Terraform Cloud
 
