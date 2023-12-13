@@ -4,7 +4,7 @@ metadata:
   labels:
     app: postgres
   name: db-deployment
-  namespace: db
+  namespace: postgres
 spec:
   replicas: 1
   selector:
@@ -16,7 +16,7 @@ spec:
         app: postgres
     spec:
       containers:
-        - image: post
+        - image: postgres:latest
           name: postgres
           ports:
             - containerPort: 5432
