@@ -19,9 +19,12 @@ $ kubectl get namespaces
 $ kubectl get pods --all-namespaces
 $ kubectl get nodes --all-namespaces
 $ kubectl get nodes -o wide
+$ kubectl get events -n NAMESPACE
 $ kubectl get services --all-namespaces
 $ kubectl describe service db-service -n postgres
 $ kubectl describe service backend-service -n backend
 $ kubectl describe service frontend-service -n frontend
+$ kubectl describe POD_NAME -n NAMESPACE
+$ kubectl logs POD_NAME -n NAMESPACE
 
 ```
