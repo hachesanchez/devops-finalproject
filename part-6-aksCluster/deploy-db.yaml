@@ -1,8 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: postgres
   name: db-deployment
   namespace: postgres
 spec:
@@ -16,8 +14,10 @@ spec:
         app: postgres
     spec:
       containers:
-        - image: postgres:latest
-          name: postgres
+        - name: postgres
+          image: postgres:latest
           ports:
             - containerPort: 5432
-              name: postgres
+          env:
+            - name: POSTGRES_PASSWORD
+              value: "the-frijoles"
