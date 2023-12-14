@@ -1,6 +1,7 @@
-# Docker Compose Configuration
+# Part 3 - Deploy the application using docker-compose 
+Create a docker-compose file to deploy the whole application using docker-compose. 
 
-```yaml
+```
 version: '3'
 services:
   frontend:
@@ -47,3 +48,5 @@ networks:
 
 volumes:
   frijoles-volume:
+```
+ 

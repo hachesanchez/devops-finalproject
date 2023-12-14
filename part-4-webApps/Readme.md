@@ -24,7 +24,7 @@ $ terraform apply webApp
 
 ### 2. Create Azure DevOps pipelines to deploy code on Azure Web Apps 
 
-- Fontend Pipeline (Basic3Tier.UI)
+- **Fontend Pipeline (Basic3Tier.UI)**
 ```
 trigger:
 - main
@@ -64,7 +64,7 @@ steps:
 ```
 
 
-- Backend Pipeline (Basic3Tier.API)
+- **Backend Pipeline (Basic3Tier.API)**
 
 ```
 trigger:

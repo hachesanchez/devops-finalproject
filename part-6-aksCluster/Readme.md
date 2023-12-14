@@ -14,7 +14,8 @@
 
 ### Useful commands to check the cluster
 ```
-
+$ kubectl apply -f FILE_NAME.yaml
+$ kubectl delete OBJECT OBJECT_NAME -n NAMESPACE
 $ kubectl get namespaces
 $ kubectl get pods --all-namespaces
 $ kubectl get nodes --all-namespaces
