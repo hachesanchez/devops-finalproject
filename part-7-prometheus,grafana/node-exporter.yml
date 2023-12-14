@@ -1,4 +1,3 @@
-node-exporter.yml
 - name: Create NodeExporter
   hosts: all
   become: yes
