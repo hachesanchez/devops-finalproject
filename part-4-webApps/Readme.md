@@ -1,13 +1,126 @@
-<<<<<<< HEAD
+# Part 4 - Deploy the application on Azure Web Apps using the Azure DeOps pipeline 
 
-Run command --> 
-terraform plan -out webApp
-terraform apply webApp
+## Steps:
 
-Run pipelines on dev.azure portal
+### 1. Create two web apps under one app service plan: Use Terraform scripts to create these web apps
+- Config. files:
+```
+└── terraform-workspace
+    ├── app_service_plan.tf
+    ├── postgresql.tf
+    ├── providers.tf
+    ├── resource_group.tf
+    ├── terraform.tfstate
+    ├── terraform.tfstate.backup
+    ├── terraform.tfvars
+    ├── variables.tf
+    └── web_app.tf
+```
+- Running commands:
+```
+$ terraform plan -out webApp
+$ terraform apply webApp
+```
 
-=======
-Run command --> 
+### 2. Create Azure DevOps pipelines to deploy code on Azure Web Apps 
+
+- Fontend Pipeline (Basic3Tier.UI)
+```
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+        replaceExistingArchive: true
+
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'front'
+
+    - task: AzureRmWebAppDeployment@4
+      inputs:
+        ConnectionType: 'AzureRM'
+        azureSubscription: 'Ironhack Subs(2)(b892ab8c-2c38-478a-8b8b-887ddc61d17d)'
+        appType: 'webAppLinux'
+        WebAppName: 'the-frijoles-front' 
+        packageForLinux: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+        StartupCommand: 'pm2 serve /home/site/wwwroot'
+```
+* Modified files: config.json
+```
+{
+    "API_URL": "https://the-frijoles-back.azurewebsites.net/"
+}
+```
+
+
+- Backend Pipeline (Basic3Tier.API)
+
+```
+trigger:
+- main
+pool:
+  vmImage: 'ubuntu-latest'
+steps:
+- task: UseDotNet@2
+  inputs:
+    version: '7.x'
+    includePreviewVersions: true
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    command: build
+    projects: '**/*.csproj'
+    arguments: '--configuration $(buildConfiguration)' 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: test
+    projects: '**/*Tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: publish
+    publishWebProjects: True
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: True
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Ironhack Subs(2)(b892ab8c-2c38-478a-8b8b-887ddc61d17d)'
+    appType: 'webAppLinux'
+    WebAppName: 'the-frijoles-back'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+    RuntimeStack: 'DOTNETCORE|7.0'
+    StartupCommand: 'dotnet Basic3TierAPI.dll'
+
+```
+* Modified files: appsettings.json
+```
+{
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+     "Basic3Tier": "Host=basic3tier.postgres.database.azure.com;Port=5432;Database=basic3tier;Username=postgres;Password=PASSWORD?"
+  },
+  "Logging": {
+    "LogLevel": {
+```
+
+
+
+### 3. [Bonus] - Use Azure-managed Postgres SQL for the database. 
+
+<!-- 
+
 terraform plan -out webApp
 terraform apply webApp
 
@@ -82,5 +195,5 @@ steps:
     WebAppName: 'the-frijoles-back'
     packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
     RuntimeStack: 'DOTNETCORE|7.0'
-    StartupCommand: 'dotnet Basic3TierAPI.dll'
->>>>>>> reche
+    StartupCommand: 'dotnet Basic3TierAPI.dll' -->
+ 
