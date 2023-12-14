@@ -20,5 +20,5 @@ spec:
       - image: kaputinho/basic3tier-front:front
         name: frontend
         ports:
-          - containerPort: 80
+          - containerPort: 8080
             name: frontend
