@@ -39,7 +39,8 @@ Use the below environment variables for this database.
 - `POSTGRES_DB: basic3tier `
 Make sure to use external volume to store the data. 
 ```
-docker run --name postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=admin123 -e POSTGRES_DB=basic3tier -v frijoles-volume:/var/lib/postgresql/data -p 5432:5432 -d postgres:latest
+Create a docker volume : docker volume create --volume name
+Create a container fot a postgres database into a created volume :  docker run --name postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=admin123 -e POSTGRES_DB=basic3tier -v frijoles-volume:/var/lib/postgresql/data -p 5432:5432 -d postgres:latest
 ```
 
 ### 8. [Bonus Point] - Deploy pgadmin (dpage/pgadmin4:latest) for connecting to the above Postgres database. 
