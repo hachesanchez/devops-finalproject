@@ -23,5 +23,5 @@ spec:
           - containerPort: 8080
             name: frontend
         env:
-          - name: BACKEND_URL
-            value: "http://20.74.13.76/api/user"
+          - name: API_URL
+            value: "http://20.74.13.76/"
