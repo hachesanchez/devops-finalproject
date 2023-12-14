@@ -34,9 +34,9 @@ $ docker run --name front  -d -p 80:8080 kaputinho/basic3tier-front:front
 
 ### 7. Deploy a database container (using postgres:latest image). 
 Use the below environment variables for this database. 
-a. `POSTGRES_USER: postgres `
-b. `POSTGRES_PASSWORD: admin123`
-c. `POSTGRES_DB: basic3tier `
+-  `POSTGRES_USER: postgres `
+- `POSTGRES_PASSWORD: admin123`
+- `POSTGRES_DB: basic3tier `
 Make sure to use external volume to store the data. 
 ```
 docker run --name postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=admin123 -e POSTGRES_DB=basic3tier -v frijoles-volume:/var/lib/postgresql/data -p 5432:5432 -d postgres:latest
