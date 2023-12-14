@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: backend
-  name: backend-deployment
+  name: finalproject
   namespace: backend
 spec:
   replicas: 3
