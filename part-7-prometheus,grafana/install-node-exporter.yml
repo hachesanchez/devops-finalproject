@@ -1,5 +1,5 @@
 - name: Create NodeExporter
-  hosts: all
+  hosts: webserver
   become: yes
   tasks:
   - name: NodeExporter container

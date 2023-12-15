@@ -1,5 +1,5 @@
 - name: Installing Prometheus
-  hosts: all
+  hosts: webserver
   become: yes
   tasks:
   - name: Create a volume
