@@ -28,7 +28,7 @@
 └── service-frontend-NodePort.yaml
 
 ```
-![AKS Cluster](part-6-aksCluster/assets/aks_bash.png)
+![AKS Cluster](./assets/aks_bash.png)
 
 ### Useful commands to check the cluster
 ```
