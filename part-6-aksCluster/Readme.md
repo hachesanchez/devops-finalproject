@@ -20,8 +20,7 @@
 ├── namespace-finalproject.yaml
 ├── service-backend-ClusterIP.yaml
 ├── service-backend-LoadBalancer.yaml
-├── service-backend-NodePort.yaml
-├── service-backend-accessfront.yaml
+├── service-backend-NodePort.yaml 
 ├── service-db-ClusterIP.yaml
 ├── service-frontend-ClusterIP.yaml
 ├── service-frontend-LoadBalancer.yaml
