@@ -16,7 +16,7 @@ spec:
         app: backend
     spec:
       containers:
-        - image: kaputinho/basic3tier-back:back
+        - image: kaputinho/basic3tier-back-k8s:latest
           name: backend
           ports:
             - containerPort: 80
