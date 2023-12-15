@@ -16,14 +16,10 @@ spec:
       labels:
         app: frontend
     spec:
-      containers:
-     # - image: kaputinho/basic3tier-front:front
+      containers: 
       - image: kaputinho/basic3tier-front-k8s:latest
         name: frontend
         ports:
           - containerPort: 8080
             name: frontend
-            
-        # env:
-        #   - name: API_URL
-        #     value: "http://20.74.13.76/"
+    
