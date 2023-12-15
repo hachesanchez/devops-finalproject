@@ -22,9 +22,9 @@ spec:
             - containerPort: 80
           env:
             - name: DATABASE_HOST
-              value: "db-service-clusterip"  # Use the correct service name
+              value: "db-service-clusterip"  
             - name: DATABASE_PORT
-              value: "5432"  # Use the correct port
+              value: "5432"  
             - name: POSTGRES_USER
               value: "postgres"
             - name: POSTGRES_PASSWORD
