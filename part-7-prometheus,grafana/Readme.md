@@ -3,7 +3,9 @@
 ## Steps
 
 # 1. Use Ansible playbooks to deploy Prometheus and Grafana on a Linux machine.
-
+sudo apt install ansible
+sudo apt-get install python3-docker
+ansible-playbook all-playbooks.yml
 
 # 2. Add the infrastructure metrics of all the VMs used in the project to the monitoring tool. 
 
