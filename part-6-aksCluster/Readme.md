@@ -11,6 +11,24 @@
 - Create a load balancer to expose the frontend application. 
 - [Bonus, Optional] - Add a domain (ex. ui.myapp.com and api.myapp.com) to your application 
 
+```
+.
+├── Readme.md
+├── deploy-backend.yaml
+├── deploy-db.yaml
+├── deploy-frontend.yaml
+├── namespace-finalproject.yaml
+├── service-backend-ClusterIP.yaml
+├── service-backend-LoadBalancer.yaml
+├── service-backend-NodePort.yaml
+├── service-backend-accessfront.yaml
+├── service-db-ClusterIP.yaml
+├── service-frontend-ClusterIP.yaml
+├── service-frontend-LoadBalancer.yaml
+└── service-frontend-NodePort.yaml
+
+```
+![AKS Cluster](part-6-aksCluster/assets/aks_bash.png)
 
 ### Useful commands to check the cluster
 ```
